@@ -30,6 +30,8 @@
     
     <!-- Leaflet CSS pour la carte -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+	
+	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     
     <style>
         #map {
@@ -106,5 +108,82 @@
             });
         }
     </script>
+	
+	<script>
+		// Charge le fichier CSV et place les marqueurs
+		Papa.parse('boulangeries-qui-proposent-la-baguette-des-franciliens.csv', {
+			download: true,
+			header: true,
+			delimiter: ",",
+			complete: function(results) {
+				results.data.forEach(function(row) {
+					const coordStr = row["CONCAT LOCALISATION"];
+					if (coordStr && coordStr.includes(",")) {
+						const [lat, lon] = coordStr.split(',').map(s => parseFloat(s.trim()));
+						const nom = row["NOM"] || "Boulangerie";
+						const adresse = row["ADRESSE"] || "";
+						const ville = row["VILLE"] || "";
+
+						// Vérifie que les coordonnées sont valides
+						if (!isNaN(lat) && !isNaN(lon)) {
+							L.marker([lat, lon]).addTo(map)
+							  .bindPopup(`<b>${nom}</b><br>${adresse}<br>${ville}`);
+						}
+					}
+				});
+			},
+			error: function(err) {
+				console.error("Erreur lors du chargement du fichier CSV :", err);
+			}
+		});
+	</script>
+<script>
+const boulangeries = [
+  {
+    NOM: "AU GOUT DU TEMPS",
+    ADRESSE: "104 RUE BOBILLOT",
+    VILLE: "Paris",
+    COORDS: [48.822684, 2.347014]
+  },
+  {
+    NOM: "LES DOUCEURS DE MARIE",
+    ADRESSE: "12 RUE RENE BRULAY",
+    VILLE: "Sartrouville",
+    COORDS: [48.93575, 2.16361]
+  },
+  {
+    NOM: "AU FOURNIL DE GWEN",
+    ADRESSE: "17 RUE DES ORMESSONS",
+    VILLE: "Vaux-le-Pénil",
+    COORDS: [48.526047, 2.681711]
+  }
+];
+
+boulangeries.forEach(b => {
+  L.marker(b.COORDS).addTo(map)
+    .bindPopup(`<b>${b.NOM}</b><br>${b.ADRESSE}<br>${b.VILLE}`);
+});
+</script>
+<script>
+    fetch('boulangeries-qui-proposent-la-baguette-des-franciliens.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(boulangerie => {
+                const lat = parseFloat(boulangerie.latitude);
+                const lon = parseFloat(boulangerie.longitude);
+                const nom = boulangerie.nom || "Boulangerie inconnue";
+                const adresse = boulangerie.result_label || boulangerie.adresse_concat;
+
+                if (!isNaN(lat) && !isNaN(lon)) {
+                    L.marker([lat, lon], { title: nom }).addTo(map)
+                        .bindPopup(`<b>${nom}</b><br>${adresse}`);
+                }
+            });
+        })
+        .catch(error => {
+            console.error("Erreur de chargement du fichier JSON :", error);
+        });
+</script>
+
 </body>
 </html>
