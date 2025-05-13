@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Milfeuilles de ta Région - Carte</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style-index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Leaflet CSS pour la carte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border: 5px solid #FFD700; /* Doré pour le thème "millefeuille" */
+            border-radius: 10px;
+        }
+        .leaflet-container {
+            background-color: #f9f3e9; /* Couleur claire, un peu comme une pâte feuilletée */
+        }
+        .milfeuille-marker {
+            color: #FF6347; /* Tomate, une couleur pour le côté fun */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="consent-popup" class="popup">
+        <p>Acceptez-vous les cookies, les millefeuilles et l'amour au caramel ?</p>
+        <button id="accept">Oui, je fonds</button>
+    </div>
+
+    <button id="geolocate" onclick="window.location.href='profils.html'">Trouver un Milfeuille près de moi</button>
+
+    <nav class="main-menu">
+		<a href="index.html">Accueil</a>
+        <a href="profils.html">Profils</a>
+        <a href="test.html">Test de compatibilité</a>
+        <a href="jeu.html">Jeu</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="info-section">
+        <h2>Où trouver des Milfeuilles près de chez toi ?</h2>
+        <p>Explore notre carte interactive pour localiser les meilleurs millefeuilles de ta région ! Et oui, tu es à un clic de la pâtisserie de tes rêves.</p>
+    </div>
+
+    <!-- Carte interactive avec Leaflet -->
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([48.8566, 2.3522], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var milfeuilleMarker = L.marker([48.8566, 2.3522]).addTo(map);
+        milfeuilleMarker.bindPopup("<b>Milfeuille au chocolat chaud !</b><br>À déguster à Paris !").openPopup();
+
+        L.marker([48.8738, 2.2950]).addTo(map).bindPopup("<b>Milfeuille à la crème de pistache !</b><br>À découvrir à Paris !");
+
+        L.marker([48.8606, 2.3376]).addTo(map).bindPopup('<a href="profils/pierre.html"><b>Pierre – “Une crème !”</b></a>');
+        L.marker([48.8610, 2.3350]).addTo(map).bindPopup('<a href="profils/vaness.html"><b>Vaness’la Crème – “Il m’a fait fondre...”</b></a>');
+        L.marker([48.8616, 2.3280]).addTo(map).bindPopup('<a href="profils/chocophilippe.html"><b>Choco-Philippe – “Plus jamais de chou à la crème.”</b></a>');
+        L.marker([48.8597, 2.3310]).addTo(map).bindPopup('<a href="profils/suzette.html"><b>Suzette – “Un feuilleté inversé inoubliable.”</b></a>');
+        L.marker([48.8602, 2.3345]).addTo(map).bindPopup('<a href="profils/michel.html"><b>Michel Feuilleté – “Nappage parfait.”</b></a>');
+        L.marker([48.8590, 2.3395]).addTo(map).bindPopup('<a href="profils/napoleone.html"><b>Napoléone – “Impériale jusqu’au bout du glaçage.”</b></a>');
+        L.marker([48.8580, 2.3420]).addTo(map).bindPopup('<a href="profils/cremehilda.html"><b>Crèmehilda – “Relation roulée approuvée.”</b></a>');
+        L.marker([48.8575, 2.3400]).addTo(map).bindPopup('<a href="profils/eric.html"><b>Éric le Sucré – “Micro-ondes validé.”</b></a>');
+        L.marker([48.8560, 2.3430]).addTo(map).bindPopup('<a href="profils/lady.html"><b>Lady Mille – “Glaçage de compétition.”</b></a>');
+        L.marker([48.8550, 2.3450]).addTo(map).bindPopup('<a href="profils/jean-croute.html"><b>Jean-Croûte – “Sous la croûte, l’amour.”</b></a>');
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var userLat = position.coords.latitude;
+                var userLon = position.coords.longitude;
+                map.setView([userLat, userLon], 13);
+                L.marker([userLat, userLon]).addTo(map).bindPopup("<b>Vous êtes ici !</b>").openPopup();
+            });
+        }
+    </script>
+</body>
+</html>
