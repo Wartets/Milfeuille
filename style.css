@@ -52,9 +52,12 @@ body {
 	top: -50px;
 	z-index: 1000;
 	width: 50px;
-	pointer-events: none;
 	opacity: 0.8;
 	animation: fall 6s linear infinite;
+}
+
+.falling:hover {
+	animation: blink 0.1s infinite;
 }
 
 @keyframes fall {
@@ -76,13 +79,13 @@ body {
 	font-size: 2em;
 	text-align: center;
 	text-shadow: 2px 2px black;
-	animation: blink 1s infinite;
+	animation: blink 0.7s infinite;
 	color: white;
 }
 
 @keyframes blink {
 	0%, 100% { opacity: 1; }
-	50% { opacity: 0; }
+	50% { opacity: 0.2; }
 }
 
 .absurd-form {
@@ -148,4 +151,9 @@ body {
 
 body {
 	margin-top: 70px; /* ajuste si la barre est plus haute */
+}
+
+.popup-jeu:hover,
+#milfeuilleBtn:hover {
+	transform: scale(1.1) rotate(-3deg);
 }

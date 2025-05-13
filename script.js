@@ -37,7 +37,7 @@ $(document).ready(function() {
 let score = 0;
 
 function createPopupJeu() {
-	const popup = $('<div class="popup-jeu">POPUP</div>');
+	const popup = $('<div class="popup-jeu">MILFEUILLE</div>');
 	$('body').append(popup);
 	popup.css({
 		position: 'fixed',
@@ -65,8 +65,9 @@ if (window.location.pathname.includes("jeu.html")) {
 $("#contact").submit(function(e) {
 	e.preventDefault();
 	window.location.href = "https://youtu.be/L_LUpnjgPso";
+});
 
-const patisseries = ['croissant.png', 'macaron.png', 'milfeuille.png']; // Ajoute tes images dans le dossier
+const patisseries = ['croissant.png', 'macaron.png', 'milfeuille.png'];
 
 function createFallingPatisserie() {
 	const img = document.createElement("img");
