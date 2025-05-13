@@ -11,7 +11,7 @@ body {
 	font-family: 'Comic Sans MS', cursive;
 	text-align: center;
 	padding: 20px;
-	font-size: 2em;
+	font-size: 5em;
 	animation: blink 1s infinite;
 }
 
@@ -134,6 +134,7 @@ body {
 	z-index: 9999;
 	font-family: 'Comic Sans MS', cursive;
 	box-shadow: 0 0 15px magenta;
+	font-size: 1.5em;
 }
 
 .main-menu a {

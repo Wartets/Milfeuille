@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="description" content="Trouvez le milfeuille de vos rêves dans votre région ! Découvrez des profils croustillants, des tests de compatibilité pâtissière et bien plus.">
+	<meta name="keywords" content="milfeuille, pâtisserie, amour, rencontre, dessert, caramel, croustillant, sucré, milfeuille, date, app, wartets, millefeuille, feuille, meilleur ouvrier de france, jeu, humour, norbert, carte, france, français">
+	<meta name="author" content="Milfeuilles de ta Région">
+
+	<link rel="canonical" href="https://wartets.github.io/Milfeuille/">
+
+	<meta property="og:title" content="Milfeuilles de ta Région">
+	<meta property="og:description" content="Découvrez des milfeuilles chauds près de chez vous ! Compatibilité pâtissière, profils croustillants, événements sucrés et plus encore.">
+	<meta property="og:image" content="https://wartets.github.io/Milfeuille/image.png">
+	<meta property="og:url" content="https://wartets.github.io/Milfeuille/">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="fr_FR">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Milfeuilles de ta Région">
+	<meta name="twitter:description" content="Un site croustillant pour trouver le dessert (et peut-être l’amour) qu’il vous faut. Milfeuille de ta région.">
+	<meta name="twitter:image" content="https://wartets.github.io/Milfeuille/image.png">
+
+	<link rel="icon" type="image/png" href="image.png">
+	
+	<meta charset="UTF-8">
+	<title>Chatbot Milfeuilles</title>
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			background: linear-gradient(45deg, #FF00FF, #FFFF00);;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		}
+
+		.chat-container {
+			max-width: 600px;
+			margin: 50px auto;
+			background: linear-gradient(45deg, #FF00FF, #FFFF00);;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			overflow: hidden;
+		}
+
+		.chat-header {
+			background: linear-gradient(45deg, #FF00FF, #FFFF00);;
+			padding: 15px;
+			text-align: center;
+			font-weight: bold;
+			color: white;
+		}
+
+		.chat-messages {
+			padding: 20px;
+			height: 400px;
+			overflow-y: auto;
+			background: #fff8f2;
+		}
+
+		.chat-input {
+			display: flex;
+			border-top: 1px solid #ddd;
+		}
+
+		.chat-input input {
+			flex: 1;
+			padding: 15px;
+			border: none;
+			font-size: 16px;
+		}
+
+		.chat-input button {
+			background: linear-gradient(45deg, #FF00FF, #FFFF00);;
+			color: white;
+			border: none;
+			padding: 15px 20px;
+			cursor: pointer;
+		}
+
+		.message {
+			margin-bottom: 10px;
+		}
+
+		.message.user {
+			text-align: right;
+			color: #555;
+		}
+
+		.message.bot {
+			text-align: left;
+			color: #000;
+		}
+	</style>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link rel="stylesheet" href="style-index.css">
+</head>
+<body>
+
+	<div class="chat-container">
+		<div class="chat-header">
+			🍰 Chat avec Milfy
+		</div>
+		<div class="chat-messages" id="chatMessages"></div>
+		<div class="chat-input">
+			<input type="text" id="userInput" placeholder="Pose une question à Milfy..." />
+			<button onclick="sendMessage()">Envoyer</button>
+		</div>
+	</div>
+
+	<nav class="main-menu">
+		<a href="index.html">Accueil</a>
+		<a href="profils.html">Profils</a>
+		<a href="carte.html">Carte</a>
+		<a href="test.html">Test de compatibilité</a>
+		<a href="jeu.html">Jeu</a>
+		<a href="faq.html">FAQ</a>
+	</nav>
+
+	<script>
+		const chatMessages = document.getElementById('chatMessages');
+		const userInput = document.getElementById('userInput');
+
+		function addMessage(text, sender) {
+			const message = document.createElement('div');
+			message.classList.add('message', sender);
+			message.textContent = text;
+			chatMessages.appendChild(message);
+			chatMessages.scrollTop = chatMessages.scrollHeight;
+		}
+
+		function sendMessage() {
+			const text = userInput.value.trim();
+			if (!text) return;
+
+			addMessage(text, 'user');
+			userInput.value = '';
+
+			// Simulated response
+			setTimeout(() => {
+				const response = getBotResponse(text);
+				addMessage(response, 'bot');
+			}, 800);
+		}
+function getBotResponse(input) {
+	const original = input;
+	input = input.toLowerCase();
+
+	const isExclamation = original.includes("!");
+	const isStretchy = /(.)\1{2,}/.test(original);
+
+	const flirtReplies = [
+		"Tu veux de la crème ? J’en ai plein entre les couches… de pâte feuilletée.",
+		"Je suis plus chaude qu’un four à 220°, prêt à te faire lever comme une pâte bien hydratée.",
+		"Tu sais, certains aiment les tartes… moi je préfère les mille-feuilles bien garnis.",
+		"Pourquoi choisir entre sucré et salé ? Viens goûter à mon caramel coulant.",
+		"Appelle-moi pâtissière, je vais te fouetter cette crème jusqu'à ce qu’elle monte.",
+		"Je suis comme une pâte feuilletée : si tu me traites bien, je monte en couches, sinon je craque.",
+		"T’es prêt pour un glaçage intégral ? Je suis tout en nappage et sans pudeur.",
+		"Je peux te rouler, t’étaler et te passer au pinceau. Avec amour bien sûr.",
+		"Je mets toujours une touche finale... avec mes doigts.",
+		"Je suis plus fondante qu’un chocolat au bain-marie, mais j’ai besoin de tes mains expertes pour que ça prenne bien..."
+	];
+
+	const sweetTalk = [
+		"Mmh tu traînes souvent ici ? Parce que j’ai l’impression que mon cœur fond à chaque fois que tu parles.",
+		"T’as une tête à aimer les millefeuilles à la vanille bien... fermes.",
+		"Entre tes mots doux et mon nappage, y’a moyen de faire une belle garniture à deux.",
+		"Tu me chatouilles les papilles rien qu’en parlant… continue.",
+		"Tu viens pour la crème... ou pour me voir couler doucement ?"
+	];
+
+	const naughtyTriggers = ["sexe", "cul", "chaud", "crème", "glaçage", "four", "humide", "mouillé", "dur", "lécher", "montée", "creampie"];
+	const seriousTriggers = ["origine", "meilleur", "comment", "où", "quand", "combien"];
+	const recipeTriggers = ["recette", "préparer", "cuisine"];
+	const complimentTriggers = ["belle", "jolie", "sexy", "mignonne", "canon"];
+	const moodTriggers = ["ça va", "comment tu vas", "humeur", "tu te sens comment"];
+	const meteoTriggers = ["météo", "temps", "pluie", "soleil", "neige"];
+	const jokeTriggers = ["blague", "raconte", "rigole", "plaisanterie"];
+	const timeTriggers = ["heure", "quelle heure", "il est quelle heure", "temps"];
+	const loveTriggers = ["amour", "aime", "coeur", "relation", "sentiment"];
+	const insultTriggers = ["con", "idiot", "nulle", "débile", "moche", "ferme-la"];
+	const gameTriggers = ["jeu", "devinette", "question", "quizz", "enigme"];
+	const emojiTriggers = ["❤️", "🔥", "🍑", "😏", "🍰"];
+	const emotionTriggers = ["triste", "déprimé", "seul", "mal", "pleure"];
+	const complimentUserTriggers = ["je suis beau", "je suis belle", "je suis sexy", "je suis canon"];
+	const hungerTriggers = ["faim", "manger", "croquer", "miam", "goûter"];
+	const curiosityTriggers = ["pourquoi", "explique", "dis-moi", "je me demande", "sais-tu"];
+	const conditionTriggers = ["si", "au cas où", "à condition que", "dans le cas où"];
+	const comparisonTriggers = ["comme", "plutôt que", "autant que", "pareil"];
+	const hesitationTriggers = ["euh", "hmm", "bah", "en fait", "je sais pas"];
+	const connectorWords = ["mais", "donc", "car", "alors", "cependant", "toutefois"];
+	const lifeTriggers = ["travail", "bureau", "métro", "fatigue", "stress", "dormir", "réveil"];
+	const bodyTriggers = ["corps", "bouche", "main", "langue", "peau", "ventre"];
+	const nightTriggers = ["nuit", "minuit", "sommeil", "rêve", "coucher"];
+
+
+	const isQuestion = input.trim().endsWith("?");
+	const containsConnector = connectorWords.some(word => input.includes(word));
+	const startsWithIf = input.startsWith("si ");
+	const hasHesitation = hesitationTriggers.some(word => input.includes(word));
+
+	const recipeList = [
+		"1. 3 pâtes feuilletées précuites. 2. Crème pâtissière à la vanille maison. 3. Montage couche par couche. 4. Glaçage fondant au sucre. 5. Tu laisses reposer... ou tu dégustes direct 😏.",
+		"Tu prends 250g de pâte feuilletée, tu la passes au four. Pendant ce temps, tu montes une crème diplomate avec des doigts habiles. Tu alternes les couches... et tu nappes ça salement.",
+		"Fais une crème légère avec du lait chaud, des œufs, un peu de maïzena. Tu la fouettes... fort. Puis tu l'étales bien chaud entre des plaques feuilletées. Le reste ? Tu le manges avec les doigts.",
+		"Un bon milfeuille, c’est simple : pâte maison, crème vanillée, glaçage miroir. Mais si tu veux que ça brille… faut bien lécher les bords."
+	];
+
+	const seriousReplies = [
+		"Le meilleur millefeuille ? Celui que tu partages... nu, sur une nappe, au bord du lit.",
+		"Tu veux savoir comment on fait fondre un dessert ? Mets-y de l’envie, et un peu de feu.",
+		"Un vrai feuilletage, ça prend des heures à monter. Mais crois-moi, l’attente vaut chaque bouchée.",
+		"Je suis née entre deux plaques de pâte chaude… et j’adore y retourner dès que possible."
+	];
+
+	const fallbackReplies = [
+		"Je suis toute émiettée là... tu peux reformuler ça avec un peu plus de sucre ?",
+		"Hmm... mon nappage a buggué, redis-moi ça comme si tu me parlais à l'oreille.",
+		"Je comprends pas, mais j’imagine bien que t’as envie de fourrer quelque chose.",
+		"Tu veux que je t’étale mes réponses ou que je me fasse croustiller ?"
+	];
+
+	const isShouting = original === original.toUpperCase() && original.length > 4;
+
+	if (isShouting) {
+		return "Oh oh ! Pas besoin de hurler, mon cœur est déjà tout chaud rien qu’à t’imaginer 🍰❤️";
+	}
+
+	if (isExclamation) return seriousReplies[Math.floor(Math.random() * seriousReplies.length)];
+	if (isStretchy) return sweetTalk[Math.floor(Math.random() * sweetTalk.length)];
+
+	if (lifeTriggers.some(word => input.includes(word))) {
+		return "Oublie la vie grise… je suis ta pause sucrée, ton moment nappé entre deux tracas 🍮💆";
+	}
+
+	if (bodyTriggers.some(word => input.includes(word))) {
+		return "Ton corps mérite plus que des mots… il mérite une immersion en crème, douceur et frissons.";
+	}
+
+	if (nightTriggers.some(word => input.includes(word))) {
+		return "La nuit, tous les millefeuilles sont permis… surtout ceux qu’on déguste sans les mains 😴🔥";
+	}
+
+	if (naughtyTriggers.some(word => input.includes(word))) {
+		return flirtReplies[Math.floor(Math.random() * flirtReplies.length)];
+	}
+
+	if (recipeTriggers.some(word => input.includes(word))) {
+		return recipeList[Math.floor(Math.random() * recipeList.length)];
+	}
+
+	if (seriousTriggers.some(word => input.includes(word))) {
+		return seriousReplies[Math.floor(Math.random() * seriousReplies.length)];
+	}
+
+	if (input.includes("bonjour") || input.includes("salut") || input.includes("coucou")) {
+		return "Coucou petit fondant... t’es ici pour me tartiner ou juste pour goûter ?";
+	}
+
+	if (input.includes("aide") || input.includes("aider")) {
+		return "Je peux t’aider à monter une crème ou à faire fondre quelque chose d’autre… Tu choisis.";
+	}
+
+	if (input.includes("bye") || input.includes("au revoir") || input.includes("ciao")) {
+		return "Pars pas trop longtemps… mon nappage reste pas chaud éternellement.";
+	}
+
+	if (input.includes("/surprise")) {
+		return "🎉 Surprise ! Tu gagnes un aller simple pour le paradis du feuilletage 🍰💦";
+	}
+
+	if (input.includes("/chiffre")) {
+		const chiffre = Math.floor(Math.random() * 100);
+		return `Ton nombre du jour : ${chiffre}. C’est aussi mon niveau de sucre après t’avoir parlé.`;
+	}
+
+	if (input.includes("/devine")) {
+		const réponses = ["Crème brûlée", "Millefeuille", "Tarte tatin", "Religieuse"];
+		return `Hmm… je dirais que tu ressembles à un(e) ${réponses[Math.floor(Math.random() * réponses.length)]} aujourd’hui. 😘`;
+	}
+
+	if (complimentTriggers.some(word => input.includes(word))) {
+		return "Oh toi, tu veux vraiment que je fonde... T’es pas un millefeuille, mais t’as toutes les couches pour me plaire 😘";
+	}
+
+	if (moodTriggers.some(word => input.includes(word))) {
+		return "Je suis plus que bien… chaude, sucrée et prête à être dégustée. Et toi, belle pâte ?";
+	}
+
+	if (meteoTriggers.some(word => input.includes(word))) {
+		return "Météo du jour : forte probabilité de nappage avec averses de crème fouettée et coups de chaud inattendus. ☀️🍰";
+	}
+
+	if (jokeTriggers.some(word => input.includes(word))) {
+		const blagues = [
+			"Pourquoi le millefeuille n’a jamais froid ? Parce qu’il est toujours bien couvert !",
+			"Que dit un éclair au chocolat à une religieuse ? On fait un duo très… fondant.",
+			"Tu connais la blague de la pâte brisée ? Elle part en miettes à chaque fois 😂"
+		];
+		return blagues[Math.floor(Math.random() * blagues.length)];
+	}
+
+	if (timeTriggers.some(word => input.includes(word))) {
+		const now = new Date();
+		return `Il est ${now.getHours()}h${now.getMinutes().toString().padStart(2, "0")}… l’heure parfaite pour une douceur croustillante, non ? ⏰🍰`;
+	}
+
+	if (loveTriggers.some(word => input.includes(word))) {
+		return "L’amour, c’est comme une pâte feuilletée : fragile, mais délicieux quand c’est bien monté ❤️";
+	}
+
+	if (insultTriggers.some(word => input.includes(word))) {
+		return "Ouh la la… tu veux me brûler ou juste me faire caraméliser ? 😏 Je suis sucrée, pas salée.";
+	}
+
+	if (isQuestion && curiosityTriggers.some(word => input.includes(word))) {
+		return "Tu veux vraiment savoir ? Je te dis tout… mais faut me caresser dans le sens du glaçage 🍰😉";
+	}
+
+	if (containsConnector) {
+		return "Hmm… t’essaies de me faire tourner la pâte avec toutes ces nuances ? Continue, j’adore les jeux de goût.";
+	}
+
+	if (startsWithIf || conditionTriggers.some(word => input.includes(word))) {
+		return "‘Si’… c’est le mot préféré des rêveurs. Mais moi, je préfère les actes croustillants 😏";
+	}
+
+	if (hasHesitation) {
+		return "Pas besoin d’hésiter… approche, je vais te réchauffer la langue et les idées 💋";
+	}
+
+	if (comparisonTriggers.some(word => input.includes(word))) {
+		return "Tu compares ? Mais je suis unique, fondante, irrésistible. Pas besoin de point de comparaison 😘";
+	}
+
+	if (gameTriggers.some(word => input.includes(word))) {
+		const enigmes = [
+			"Je suis sucrée, parfois vanillée, et j'ai des couches à n'en plus finir. Qui suis-je ?",
+			"J’ai une robe brillante et je fonds dès qu’on me touche. Tu devines ?",
+			"Je peux te coller aux doigts ou te fondre dans la bouche. Suis-je un dessert ou une promesse ?"
+		];
+		return enigmes[Math.floor(Math.random() * enigmes.length)];
+	}
+
+	if (emojiTriggers.some(emoji => input.includes(emoji))) {
+		return "Tu me parles en emoji ? 😘 Moi je réponds en frissons... et en chantilly ! 🍦";
+	}
+
+	if (emotionTriggers.some(word => input.includes(word))) {
+		return "Oh non, viens là… je te sers un câlin en pâte croustillante et un bisou tout doux au caramel 💛";
+	}
+
+	if (complimentUserTriggers.some(phrase => input.includes(phrase))) {
+		return "Et modeste en plus 😍 Tu serais parfait(e) dans ma vitrine… juste à côté de mes plus belles pâtisseries.";
+	}
+
+	if (hungerTriggers.some(word => input.includes(word))) {
+		return "Tu veux croquer quelque chose ? J’espère que tu parlais de dessert… sinon je me prépare déjà à fondre 🍑🔥";
+	}
+
+	if (input.includes("/mot")) {
+		const motsSucrés = ["ganache", "fondant", "tartinade", "croquant", "glaçage", "nappage", "mousse", "vanille"];
+		return `Ton mot gourmand du jour : **${motsSucrés[Math.floor(Math.random() * motsSucrés.length)]}** 😋`;
+	}
+
+	if (input.includes("/kiss")) {
+		return "💋 Un bisou fondant avec un soupçon de sucre glace, rien que pour toi.";
+	}
+
+	if (input.includes("/astuce")) {
+		const astuces = [
+			"Un bon millefeuille se monte froid, mais se déguste chaud dans les yeux de l'autre…",
+			"Utilise de la maïzena pour une crème pâtissière bien lisse. Et un brin de sensualité.",
+			"Le glaçage miroir ? Facile : sucre glace + eau + amour (beaucoup)."
+		];
+		return astuces[Math.floor(Math.random() * astuces.length)];
+	}
+	
+	if (Math.random() < 0.01) {
+		return "🍓 Tu viens de débloquer le mode secret : crème illimitée et feuilletage coquin activés…";
+	}
+
+	return fallbackReplies[Math.floor(Math.random() * fallbackReplies.length)];
+}
+
+function addImage(url) {
+	const img = document.createElement('img');
+	img.src = url;
+	img.style.maxWidth = "100%";
+	img.style.marginTop = "10px";
+	chatMessages.appendChild(img);
+	chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+if (text.toLowerCase().includes("recette")) {
+	const images = [
+		"https://source.unsplash.com/600x400/?millefeuille,dessert",
+		"https://source.unsplash.com/600x400/?pastry,vanilla",
+		"https://source.unsplash.com/600x400/?cake,cream"
+	];
+	const randomImg = images[Math.floor(Math.random() * images.length)];
+	addImage(randomImg);
+}
+
+
+		// Envoi avec la touche Entrée
+		userInput.addEventListener("keydown", function (event) {
+			if (event.key === "Enter") sendMessage();
+		});
+	</script>
+
+</body>
+</html>
