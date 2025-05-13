@@ -1,0 +1,181 @@
+body {
+	background: url('couverts.png') repeat;
+	font-family: 'Papyrus', cursive;
+	color: #000;
+	cursor: url('cuillere-cursor.png'), auto;
+}
+
+.banner {
+	background-color: #FF00FF;
+	color: #FFFF00;
+	font-family: 'Comic Sans MS', cursive;
+	text-align: center;
+	padding: 20px;
+	font-size: 2em;
+	animation: blink 1s infinite;
+}
+
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 0.4; }
+	100% { opacity: 1; }
+}
+
+#milfeuilleBtn {
+	display: block;
+	margin: 0 auto;
+	padding: 15px;
+	font-size: 1.5em;
+	background: #FFFF00;
+	color: #FF00FF;
+	border: 3px dashed #000;
+}
+
+.loader {
+	text-align: center;
+	font-style: italic;
+	margin-top: 40px;
+	font-size: 1.2em;
+}
+
+body {
+	cursor: url('https://cur.cursors-4u.net/symbols/sym-4/sym375.cur'), auto;
+}
+
+.falling {
+	position: fixed;
+	top: -50px;
+	z-index: 1000;
+	width: 50px;
+	opacity: 0.8;
+	animation: fall 6s linear infinite;
+}
+
+.falling:hover {
+	animation: blink 0.1s infinite;
+}
+
+@keyframes fall {
+	0% {
+		transform: translateY(0) rotate(0deg);
+	}
+	100% {
+		transform: translateY(120vh) rotate(360deg);
+	}
+}
+
+.test-bg {
+	background: linear-gradient(45deg, #FF00FF, #FFFF00);
+	font-family: 'Comic Sans MS', cursive;
+	padding: 30px;
+}
+
+.flashy-title {
+	font-size: 2em;
+	text-align: center;
+	text-shadow: 2px 2px black;
+	animation: blink 0.7s infinite;
+	color: white;
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.2; }
+}
+
+.absurd-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	background: #fff0f5;
+	border: 5px dotted #f0c;
+	padding: 20px;
+	max-width: 500px;
+	margin: 0 auto;
+	box-shadow: 0 0 20px magenta;
+}
+
+.absurd-form select, .absurd-form button {
+	font-family: Papyrus, cursive;
+	font-size: 1em;
+	padding: 10px;
+	background: #ffccff;
+	border: 2px dashed #cc00cc;
+}
+
+.test-result {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 1.5em;
+	color: #330033;
+	animation: sparkle 1s infinite alternate;
+}
+
+@keyframes sparkle {
+	from { text-shadow: 0 0 5px pink; }
+	to { text-shadow: 0 0 20px fuchsia; }
+}
+
+.main-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(to right, pink, violet);
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	z-index: 9999;
+	font-family: 'Comic Sans MS', cursive;
+	box-shadow: 0 0 15px magenta;
+}
+
+.main-menu a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 1px 1px #000;
+	transition: transform 0.3s ease;
+}
+
+.main-menu a:hover {
+	transform: scale(1.2) rotate(5deg);
+	text-decoration: underline;
+}
+
+body {
+	margin-top: 70px;
+}
+
+.info-section, .user-recommendations, .footer-info {
+	padding: 20px;
+	margin: 20px auto;
+	background: rgba(255, 255, 255, 0.7);
+	border: 4px dashed hotpink;
+	box-shadow: 0 0 20px fuchsia;
+	font-family: 'Comic Sans MS', cursive;
+}
+
+.info-section ul, .user-recommendations ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.info-section h2, .user-recommendations h3, .footer-info h3 {
+	text-align: center;
+	color: #ff00ff;
+	font-size: 1.8em;
+}
+
+.info-section p, .user-recommendations p {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.footer-info {
+	text-align: center;
+	font-size: 1.1em;
+	color: #330033;
+}
+

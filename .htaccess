@@ -1,0 +1,2 @@
+# Redirection vers la page 404.html en cas de page non trouvée
+ErrorDocument 404 /404.html

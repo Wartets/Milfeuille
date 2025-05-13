@@ -5,6 +5,7 @@
 	<title>Milfeuilles de ta Région</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	<link rel="stylesheet" href="style-index.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="script.js" defer></script>
 </head>
@@ -23,23 +24,57 @@
 		<img src="milfeuille2.gif" alt="Milfeuille qui danse">
 	</div>
 
-	<button id="milfeuilleBtn">Je veux mon milfeuille !</button>
-
-	<div class="loader">Recherche de pâtisseries croustillantes...</div>
-
 	<div id="consent-popup" class="popup">
 		<p>Acceptez-vous les cookies, les millefeuilles et l'amour au caramel ?</p>
 		<button id="accept">Oui, je fonds</button>
 	</div>
 	
-	<button id="geolocate">Trouver un Milfeuille près de moi</button>
+	<button id="geolocate" onclick="window.location.href='profils.html'">Trouver un Milfeuille près de moi</button>
 
 	<nav class="main-menu">
-		<a href="test.html">Test de compatibilité</a>
-		<a href="faq.html">FAQ</a>
-		<a href="404.html">Carte</a>
-		<a href="jeu.html">Jeu</a>
 		<a href="profils.html">Profils</a>
+		<a href="404.html">Carte</a>
+		<a href="test.html">Test de compatibilité</a>
+		<a href="jeu.html">Jeu</a>
+		<a href="faq.html">FAQ</a>
 	</nav>
+
+	<div class="info-section">
+		<h2>Bienvenue sur Milfeuilles de ta Région</h2>
+		<p>Vous êtes à la recherche de millefeuilles ultra-croustillants et légèrement baveux ? Ce site est fait pour vous ! Trouvez le milfeuille de vos rêves et faites fondre votre cœur comme une pâte feuilletée sous le four chaud.</p>
+		<p>Explorez nos profils, réalisez notre test de compatibilité pâtissière, et participez à des événements de cuisson folles. Et n'oubliez pas de vérifier votre localisation, on ne sait jamais, un milfeuille pourrait se cacher près de chez vous !</p>
+		<h3>Saviez-vous que ?</h3>
+		<ul>
+			<li>Le milfeuille, c’est un peu comme l'amour, ça prend du temps à monter mais c’est délicieux une fois qu’il est prêt !</li>
+			<li>Les millefeuilles sont originaires de Paris, la ville de l’amour… et des croissants. Oui, c’est un fait !</li>
+			<li>Il y a plus de façons de préparer un milfeuille que de façons d’aimer : fruits, crème, chocolat… les combinaisons sont infinies !</li>
+		</ul>
+	</div>
+
+	<div class="loader">Recherche de pâtisseries croustillantes...</div>
+
+	<button id="milfeuilleBtn">Je veux mon milfeuille !</button>
+
+	<div class="user-recommendations">
+		<h3>Recommandations du mois :</h3>
+		<ul>
+			<li>Le Milfeuille à la crème de pistache – Un goût subtil mais explosif !</li>
+			<li>Le Milfeuille au chocolat blanc – Parce que parfois, c’est bien de changer !</li>
+			<li>Le Milfeuille au beurre salé – Salé ou sucré ? Pourquoi choisir !</li>
+		</ul>
+		<p>Essayez ces créations et laissez-vous envoûter par leur magie. Et si vous êtes vraiment aventureux, tentez le <strong>Milfeuille à l’ail rôti</strong>… vous ne le regretterez pas !</p>
+	</div>
+
+	<div class="dancing-milfeuille">
+		<img src="milfeuille2.gif" alt="Milfeuille qui danse">
+	</div>
+
+	<div class="footer-info">
+		<h3>À propos</h3>
+		<p>Milfeuilles de ta Région est une plateforme dédiée à la rencontre entre les passionnés de pâtisseries et les amateurs de bonnes blagues bien sucrées. Nous avons un seul but : répandre l’amour et la pâte feuilletée !</p>
+		<p>Nous sommes un groupe d'irréductibles fans de gâteaux, et notre mission est de faire fondre votre cœur (et votre estomac) grâce à des millefeuilles tendres, croustillants et absolument délicieux.</p>
+		<p>Besoin d'aide ? N’hésitez pas à consulter notre FAQ ou à nous envoyer un message pour plus de douceurs !</p>
+	</div>
+
 </body>
 </html>

@@ -47,3 +47,51 @@
 	transform: scale(1.1) rotate(3deg);
 	background: #ffe6fa;
 }
+
+.top10 {
+	background: linear-gradient(135deg, #ffe8f0 0%, #fff2e6 100%);
+	border: 5px double #ff99c8;
+	margin: 50px auto;
+	padding: 30px;
+	max-width: 800px;
+	box-shadow: 0 0 20px rgba(255, 153, 200, 0.6);
+	border-radius: 15px;
+	text-align: center;
+}
+
+.top-title {
+	font-family: 'Comic Sans MS', cursive;
+	font-size: 2em;
+	color: #d6336c;
+	margin-bottom: 20px;
+}
+
+.top-list ol {
+	padding: 0 20px;
+	list-style: decimal inside;
+	text-align: left;
+}
+
+.top-list li {
+	margin: 10px 0;
+	font-size: 1.2em;
+	background: #fffafc;
+	padding: 10px;
+	border-left: 8px solid #ffb3cc;
+	border-radius: 10px;
+	transition: background 0.3s;
+}
+
+.top-list li:hover {
+	background: #ffe0f0;
+	transform: scale(1.02);
+}
+
+.top-list a {
+	color: #8b005d;
+	text-decoration: none;
+}
+
+.top-list a:hover {
+	text-decoration: underline;
+}
